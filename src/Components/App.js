@@ -1,26 +1,27 @@
-import React from 'react';
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
-import Players from './Players';
-import Teams from './Teams';
-import Home from './Home';
-import Navbar from './Navbar';
+import React, { Component } from 'react'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import Home from './Home'
+import Navbar from './Navbar'
+import Players from './Players'
+import Teams from './Teams'
 
-function App() {
-  return (
-    <Router>
-      <div>
-        <Navbar></Navbar>
-        <Switch>
-          <Route path='/' exact component={Home}></Route>
-          <Route path='/players' exact component={Players}></Route>
-          <Route path='/teams' exact component={Teams}></Route>
-          <Route render={()=><h1 className='text-center'> Four oh four lol :)</h1>}></Route>
+class App extends Component {
+  render() {
+    return (
+      <Router>
+        <div>
+          <Navbar />
 
-        </Switch>
-
-      </div>
-    </Router>
-  );
+          <Switch>
+            <Route path='/' exact component={Home} />
+            <Route path='/players' component={Players} />
+            <Route path='/teams' component={Teams} />
+            <Route render={() => <h1 className='text-center'>Four oh Four.</h1>} />
+          </Switch>
+        </div>
+      </Router>
+    )
+  }
 }
 
-export default App;
+export default App
