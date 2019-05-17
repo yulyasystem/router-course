@@ -19,7 +19,7 @@ export default class Home extends Component {
     return (
       <div className='container'>
         <h1 className='large-header'>
-          Best Design League
+          National Aviation League
         </h1>
         <h3 className='header text-center'>
           Select a team
